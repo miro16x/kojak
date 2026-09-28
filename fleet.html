@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>
+(function(){
+  try {
+    var stored = localStorage.getItem('kojak-theme');
+    var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
+  } catch (e) {}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Our Fleet | Kojak Limousine LLC — St. Thomas, USVI</title>
+<meta name="description" content="Cadillac Escalade ESV and Mercedes-Benz Sprinter — explore the Kojak Limousine fleet, capacities and specs.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 34'%3E%3Crect width='44' height='34' rx='8' fill='%230a0a0c'/%3E%3Cpath d='M6 27 L7.5 21.5 C8.5 19 10.5 18 13 18 L15.5 15 C17 13.3 19 12.5 21 12.5 L25 12.5 C27 12.5 28.8 13.3 30 15 L32.5 18 C35 18 36.5 19.5 37 22 L38 27 Z' fill='%23C9A86A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: { colors: {
+    kblack: '#0a0a0c', kblack2: '#121215', kgold: '#c9a86a', kgoldbright: '#e4c98a', krose: '#c98b8f', kteal: '#14a89d'
+  }, fontFamily: { serif: ['Playfair Display','serif'], sans: ['Inter','sans-serif'] } } } };
+</script>
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a href="tel:+13407279169" class="topbar-phone"><i data-lucide="phone-call"></i> (340) 727-9169 <span class="topbar-tag">&nbsp;·&nbsp;Available 24/7</span></a>
+  </div>
+</div>
+
+<header class="site-header" id="siteHeader">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 44 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 11 C16 7 11 6 8 8" stroke="#C9A86A" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+        <path d="M20 11 C20 6 20 4 20 3" stroke="#C9A86A" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+        <path d="M20 11 C24 7 29 6 32 8" stroke="#C9A86A" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+        <path d="M6 27 L7.5 21.5 C8.5 19 10.5 18 13 18 L15.5 15 C17 13.3 19 12.5 21 12.5 L25 12.5 C27 12.5 28.8 13.3 30 15 L32.5 18 C35 18 36.5 19.5 37 22 L38 27 Z" fill="#C9A86A"/>
+        <circle cx="13" cy="28" r="2.6" fill="#0a0a0c" stroke="#C9A86A" stroke-width="1.3"/>
+        <circle cx="31" cy="28" r="2.6" fill="#0a0a0c" stroke="#C9A86A" stroke-width="1.3"/>
+      </svg>
+      <span class="brand-text">Kojak Limousine<small>St. Thomas · USVI</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="fleet.html">Fleet</a>
+      <a href="services.html">Services</a>
+      <a href="testimonials.html">Reviews</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme"><i data-lucide="sun" class="icon-sun"></i><i data-lucide="moon" class="icon-moon"></i></button>
+      <a href="book.html" class="btn btn-gold"><i data-lucide="calendar-check"></i><span class="hidden sm:inline">Book Now</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu"><i data-lucide="menu"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-top">
+    <span class="brand-text">Kojak Limousine</span>
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu"><i data-lucide="x"></i></button>
+  </div>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="fleet.html">Fleet</a>
+  <a href="services.html">Services</a>
+  <a href="testimonials.html">Reviews</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+  <div class="mobile-nav-footer">
+    <a href="book.html" class="btn btn-gold btn-block">Book Now</a>
+    <a href="tel:+13407279169" class="btn btn-outline btn-block"><i data-lucide="phone-call"></i> (340) 727-9169</a>
+  </div>
+</div>
+
+<main id="main">
+
+  <section class="page-header">
+    <div class="bg-glow"></div>
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Fleet</div>
+      <span class="eyebrow reveal"><i data-lucide="car-front"></i> The Fleet</span>
+      <h1 class="section-title reveal" data-delay="80" style="margin-top:16px;">A vehicle for <span class="text-gradient">every occasion</span></h1>
+      <p class="section-lead reveal" data-delay="140" style="max-width:600px;">Every car is detailed, inspected and stocked before it leaves the garage. Choose the ride that fits your party.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="display:grid; gap:32px; grid-template-columns:1fr;" id="fleetGrid">
+
+      <!-- Luxury SUV -->
+      <div class="card reveal" style="padding:0; overflow:hidden; display:grid; grid-template-columns:1fr;">
+        <div class="media-frame" style="border-radius:0; aspect-ratio:16/10;">
+          <span class="media-tag">Executive</span>
+          <img src="assets/img/fleet-escalade-roadside.jpg" alt="Kojak Limousine Cadillac Escalade ESV on a St. Thomas roadside">
+        </div>
+        <div style="padding:30px;">
+          <h3 class="font-serif" style="font-size:24px; margin-bottom:8px;">Luxury SUV — Cadillac Escalade ESV</h3>
+          <p class="section-lead" style="margin-bottom:20px;">Spacious, comfortable and built for island terrain. Ideal for airport transfers, small groups and corporate travel.</p>
+          <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-bottom:22px;">
+            <div style="display:flex; align-items:center; gap:8px; font-size:13.5px; color:var(--muted);"><i data-lucide="users" style="width:16px;height:16px;color:var(--gold);"></i> Seats up to 7</div>
+            <div style="display:flex; align-items:center; gap:8px; font-size:13.5px; color:var(--muted);"><i data-lucide="briefcase" style="width:16px;height:16px;color:var(--gold);"></i> Luggage: 6 bags</div>
+            <div style="display:flex; align-items:center; gap:8px; font-size:13.5px; color:var(--muted);"><i data-lucide="snowflake" style="width:16px;height:16px;color:var(--gold);"></i> Climate control</div>
+            <div style="display:flex; align-items:center; gap:8px; font-size:13.5px; color:var(--muted);"><i data-lucide="wifi" style="width:16px;height:16px;color:var(--gold);"></i> Wi-Fi onboard</div>
+          </div>
+          <a href="book.html?vehicle=suv" class="btn btn-gold">Reserve This Vehicle <i data-lucide="arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Sprinter Van -->
+      <div class="card reveal" data-delay="80" style="padding:0; overflow:hidden; display:grid; grid-template-columns:1fr;">
+        <div class="media-frame" style="border-radius:0; aspect-ratio:16/10;">
+          <span class="media-tag">Most Popular</span>
+          <img src="assets/img/fleet-sprinter-exterior.jpg" alt="Kojak Limousine Mercedes-Benz Sprinter with door open, St. Thomas">
+        </div>
+        <div style="padding:30px;">
+          <h3 class="font-serif" style="font-size:24px; margin-bottom:8px;">Luxury Sprinter Van — Mercedes-Benz Sprinter</h3>
+          <p class="section-lead" style="margin-bottom:20px;">Our signature ride — plush leather captain's chairs and mood lighting throughout. The choice for weddings and larger island tours.</p>
+          <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-bottom:22px;">
+            <div style="display:flex; align-items:center; gap:8px; font-size:13.5px; color:var(--muted);"><i data-lucide="users" style="width:16px;height:16px;color:var(--gold);"></i> Seats up to 14</div>
+            <div style="display:flex; align-items:center; gap:8px; font-size:13.5px; color:var(--muted);"><i data-lucide="briefcase" style="width:16px;height:16px;color:var(--gold);"></i> Luggage: 10 bags</div>
+            <div style="display:flex; align-items:center; gap:8px; font-size:13.5px; color:var(--muted);"><i data-lucide="lightbulb" style="width:16px;height:16px;color:var(--gold);"></i> Mood lighting</div>
+            <div style="display:flex; align-items:center; gap:8px; font-size:13.5px; color:var(--muted);"><i data-lucide="music-2" style="width:16px;height:16px;color:var(--gold);"></i> Premium sound</div>
+          </div>
+          <a href="book.html?vehicle=sprinter" class="btn btn-gold">Reserve This Vehicle <i data-lucide="arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section-alt" style="padding-top:60px;">
+    <div class="container" style="text-align:center;">
+      <h2 class="section-title reveal">Not sure which vehicle fits your group?</h2>
+      <p class="section-lead reveal" data-delay="80" style="max-width:520px; margin:0 auto 26px;">Call our reservations team and we'll match you to the right ride for your headcount, luggage and occasion.</p>
+      <div class="reveal" data-delay="140" style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+        <a href="tel:+13407279169" class="btn btn-gold btn-lg"><i data-lucide="phone-call"></i> Call (340) 727-9169</a>
+        <a href="book.html" class="btn btn-outline btn-lg">Book Online</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="brand" style="margin-bottom:14px; display:flex;">
+          <svg class="brand-mark" viewBox="0 0 44 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 11 C16 7 11 6 8 8" stroke="#C9A86A" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+            <path d="M20 11 C20 6 20 4 20 3" stroke="#C9A86A" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+            <path d="M20 11 C24 7 29 6 32 8" stroke="#C9A86A" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+            <path d="M6 27 L7.5 21.5 C8.5 19 10.5 18 13 18 L15.5 15 C17 13.3 19 12.5 21 12.5 L25 12.5 C27 12.5 28.8 13.3 30 15 L32.5 18 C35 18 36.5 19.5 37 22 L38 27 Z" fill="#C9A86A"/>
+            <circle cx="13" cy="28" r="2.6" fill="#0a0a0c" stroke="#C9A86A" stroke-width="1.3"/>
+            <circle cx="31" cy="28" r="2.6" fill="#0a0a0c" stroke="#C9A86A" stroke-width="1.3"/>
+          </svg>
+          <span class="brand-text">Kojak Limousine</span>
+        </a>
+        <p style="font-size:13.5px; line-height:1.9; max-width:280px;">St. Thomas' luxury chauffeured transportation, licensed, insured, and ready around the clock.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/people/Kojak-limousine-LLC-taxi-tours-and-private-transportation/61593444959352/" aria-label="Facebook" target="_blank" rel="noopener"><svg class="icon-fb" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#1877F2" d="M24 12.073C24 5.446 18.627.073 12 .073S0 5.446 0 12.073c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://www.tiktok.com/@kojak.limousine.l?_r=1&amp;_t=ZT-99ocv0e9mBh" aria-label="TikTok" target="_blank" rel="noopener"><svg class="icon-tt" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="#F6F2EC" d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V0Z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="about.html">About Us</a>
+        <a href="fleet.html">Fleet</a>
+        <a href="services.html">Services</a>
+        <a href="testimonials.html">Reviews</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="services.html#airport">Airport Transfers</a>
+        <a href="services.html#weddings">Weddings</a>
+        <a href="services.html#cruise">Cruise Ship Pickup</a>
+        <a href="services.html#corporate">Corporate Travel</a>
+        <a href="services.html#tours">Island Tours</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Charlotte Amalie<br>St. Thomas, USVI 00802</p>
+        <a href="tel:+13407279169">(340) 727-9169</a>
+        <a href="mailto:kojaklimousine@icloud.com">kojaklimousine@icloud.com</a>
+        <a href="contact.html">Contact &amp; Map</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Kojak Limousine LLC. All rights reserved. Licensed &amp; insured USVI ground transportation carrier.</span>
+      <span><a href="faq.html">FAQ</a> · <a href="book.html">Reservations</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-book-bar">
+  <a href="tel:+13407279169" class="sticky-call" aria-label="Call Kojak Limousine"><i data-lucide="phone-call"></i></a>
+  <a href="book.html" class="btn btn-gold btn-block">Book Now</a>
+</div>
+
+<style>
+  @media (min-width: 768px) {
+    #fleetGrid > div { grid-template-columns: 0.9fr 1.1fr !important; }
+    #fleetGrid .media-frame { aspect-ratio: unset !important; height: 100%; }
+  }
+</style>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

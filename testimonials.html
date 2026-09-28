@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>
+(function(){
+  try {
+    var stored = localStorage.getItem('kojak-theme');
+    var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
+  } catch (e) {}
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Testimonials | Kojak Limousine LLC — St. Thomas, USVI</title>
+<meta name="description" content="Read what guests say about Kojak Limousine LLC — St. Thomas' 5-star rated luxury chauffeured transportation service.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 34'%3E%3Crect width='44' height='34' rx='8' fill='%230a0a0c'/%3E%3Cpath d='M6 27 L7.5 21.5 C8.5 19 10.5 18 13 18 L15.5 15 C17 13.3 19 12.5 21 12.5 L25 12.5 C27 12.5 28.8 13.3 30 15 L32.5 18 C35 18 36.5 19.5 37 22 L38 27 Z' fill='%23C9A86A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: { colors: {
+    kblack: '#0a0a0c', kblack2: '#121215', kgold: '#c9a86a', kgoldbright: '#e4c98a', krose: '#c98b8f', kteal: '#14a89d'
+  }, fontFamily: { serif: ['Playfair Display','serif'], sans: ['Inter','sans-serif'] } } } };
+</script>
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a href="tel:+13407279169" class="topbar-phone"><i data-lucide="phone-call"></i> (340) 727-9169 <span class="topbar-tag">&nbsp;·&nbsp;Available 24/7</span></a>
+  </div>
+</div>
+
+<header class="site-header" id="siteHeader">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 44 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 11 C16 7 11 6 8 8" stroke="#C9A86A" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+        <path d="M20 11 C20 6 20 4 20 3" stroke="#C9A86A" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+        <path d="M20 11 C24 7 29 6 32 8" stroke="#C9A86A" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+        <path d="M6 27 L7.5 21.5 C8.5 19 10.5 18 13 18 L15.5 15 C17 13.3 19 12.5 21 12.5 L25 12.5 C27 12.5 28.8 13.3 30 15 L32.5 18 C35 18 36.5 19.5 37 22 L38 27 Z" fill="#C9A86A"/>
+        <circle cx="13" cy="28" r="2.6" fill="#0a0a0c" stroke="#C9A86A" stroke-width="1.3"/>
+        <circle cx="31" cy="28" r="2.6" fill="#0a0a0c" stroke="#C9A86A" stroke-width="1.3"/>
+      </svg>
+      <span class="brand-text">Kojak Limousine<small>St. Thomas · USVI</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="fleet.html">Fleet</a>
+      <a href="services.html">Services</a>
+      <a href="testimonials.html">Reviews</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme"><i data-lucide="sun" class="icon-sun"></i><i data-lucide="moon" class="icon-moon"></i></button>
+      <a href="book.html" class="btn btn-gold"><i data-lucide="calendar-check"></i><span class="hidden sm:inline">Book Now</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu"><i data-lucide="menu"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-top">
+    <span class="brand-text">Kojak Limousine</span>
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu"><i data-lucide="x"></i></button>
+  </div>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="fleet.html">Fleet</a>
+  <a href="services.html">Services</a>
+  <a href="testimonials.html">Reviews</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+  <div class="mobile-nav-footer">
+    <a href="book.html" class="btn btn-gold btn-block">Book Now</a>
+    <a href="tel:+13407279169" class="btn btn-outline btn-block"><i data-lucide="phone-call"></i> (340) 727-9169</a>
+  </div>
+</div>
+
+<main id="main">
+
+  <section class="page-header">
+    <div class="bg-glow"></div>
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Testimonials</div>
+      <span class="eyebrow reveal"><i data-lucide="star"></i> Testimonials</span>
+      <h1 class="section-title reveal" data-delay="80" style="margin-top:16px;">Loved by <span class="text-gradient">our guests</span></h1>
+      <div class="reveal" data-delay="140" style="display:flex; align-items:center; gap:14px; margin-top:6px;">
+        <div class="stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+        <span class="section-lead" style="font-size:15px;">5.0 out of 5 — based on 25+ Google reviews</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="display:grid; gap:24px; grid-template-columns:1fr;" class="md-grid-3">
+
+        <div class="quote-card reveal">
+          <div class="stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+          <p style="color:var(--off-white); font-size:15px; line-height:1.75; margin-bottom:18px;">"Fantastic airport drop-off experience with Kojak and family. Our driver was prompt and accommodating for our delayed flight, we received a text and call confirming a few minutes out. Reliable, safe and easy. What more could you ask of a transport company? Give them a call."</p>
+          <p style="color:var(--gold); font-size:13px;">Zachary Dietz — Google Review</p>
+        </div>
+
+        <div class="quote-card reveal" data-delay="80">
+          <div class="stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+          <p style="color:var(--off-white); font-size:15px; line-height:1.75; margin-bottom:18px;">"While we were in St. Thomas we knew we had to get taxis everywhere we wanted to go and we were so lucky to have found Kojak on our second day! He was ALWAYS there when we needed him, his van was super clean and had great A/C&hellip; He was such a great guy and his son also works with him and is such a respectful and sweet kid. I will definitely be keeping his number for when we go back! Don't waste your time on other drivers. He is the best!"</p>
+          <p style="color:var(--gold); font-size:13px;">Bridget Sullivan — Google Review</p>
+        </div>
+
+        <div class="quote-card reveal" data-delay="160">
+          <div class="stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+          <p style="color:var(--off-white); font-size:15px; line-height:1.75; margin-bottom:18px;">"Kojak Taxi is definitely the best in St Thomas! They answer their phones immediately and are happy to provide their services! Vehicles very clean and comfortable! Very personable and friendly! One time, they were totally on the opposite side of the island when I called wanting a taxi. He contacted another taxi for me &amp; they were there within 2-3 minutes! They are definitely the taxi service to use!"</p>
+          <p style="color:var(--gold); font-size:13px;">Connie Cook — Google Review</p>
+        </div>
+
+        <div class="quote-card reveal">
+          <div class="stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+          <p style="color:var(--off-white); font-size:15px; line-height:1.75; margin-bottom:18px;">"Had the pleasure of riding with Kojak taxi this past week! After waiting 2+ hrs for another taxi, I found Kojak on Google&hellip; Ray is the best! He made sure we went any and everywhere we wanted and needed! Always on time and communication is top tier! Met his father and 2 brothers. The whole family was pleasant. We always felt safe with Ray."</p>
+          <p style="color:var(--gold); font-size:13px;">Kimberly Williams — Google Review</p>
+        </div>
+
+        <div class="quote-card reveal" data-delay="80">
+          <div class="stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+          <p style="color:var(--off-white); font-size:15px; line-height:1.75; margin-bottom:18px;">"Hands down the best taxi service on the island! They go above and beyond to provide great service, and even made us feel like family! Great clean cars no matter who picks you up! Would recommend them to anybody needing taxi services on the island!"</p>
+          <p style="color:var(--gold); font-size:13px;">Leo Franco — Google Review</p>
+        </div>
+
+        <div class="quote-card reveal" data-delay="160">
+          <div class="stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+          <p style="color:var(--off-white); font-size:15px; line-height:1.75; margin-bottom:18px;">"Kojak and his family were wonderful to us! Took us everywhere we needed to go while giving so much info about the island. We always felt super safe and never had to wait for our pickup&hellip;he was always there waiting for us. By the end of the week we felt like Kojak was part of the family! Highly recommend!"</p>
+          <p style="color:var(--gold); font-size:13px;">Lisa S. — Google Review</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container" style="text-align:center;">
+      <span class="eyebrow reveal"><i data-lucide="pencil-line"></i> Share Your Experience</span>
+      <h2 class="section-title reveal" data-delay="80" style="margin-top:14px;">Ridden with us? <span class="text-gradient">Leave a review</span></h2>
+      <p class="section-lead reveal" data-delay="140" style="max-width:480px; margin:0 auto 26px;">Your feedback helps us keep raising the bar — and helps other guests find their perfect ride.</p>
+      <div class="reveal" data-delay="200" style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+        <a href="https://share.google/g0sU9EYskQ0PinVfp" target="_blank" rel="noopener" class="btn btn-gold"><i data-lucide="star"></i> Leave a Google Review</a>
+        <a href="contact.html" class="btn btn-outline">Email Your Feedback</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="brand" style="margin-bottom:14px; display:flex;">
+          <svg class="brand-mark" viewBox="0 0 44 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 11 C16 7 11 6 8 8" stroke="#C9A86A" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+            <path d="M20 11 C20 6 20 4 20 3" stroke="#C9A86A" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+            <path d="M20 11 C24 7 29 6 32 8" stroke="#C9A86A" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+            <path d="M6 27 L7.5 21.5 C8.5 19 10.5 18 13 18 L15.5 15 C17 13.3 19 12.5 21 12.5 L25 12.5 C27 12.5 28.8 13.3 30 15 L32.5 18 C35 18 36.5 19.5 37 22 L38 27 Z" fill="#C9A86A"/>
+            <circle cx="13" cy="28" r="2.6" fill="#0a0a0c" stroke="#C9A86A" stroke-width="1.3"/>
+            <circle cx="31" cy="28" r="2.6" fill="#0a0a0c" stroke="#C9A86A" stroke-width="1.3"/>
+          </svg>
+          <span class="brand-text">Kojak Limousine</span>
+        </a>
+        <p style="font-size:13.5px; line-height:1.9; max-width:280px;">St. Thomas' luxury chauffeured transportation, licensed, insured, and ready around the clock.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/people/Kojak-limousine-LLC-taxi-tours-and-private-transportation/61593444959352/" aria-label="Facebook" target="_blank" rel="noopener"><svg class="icon-fb" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#1877F2" d="M24 12.073C24 5.446 18.627.073 12 .073S0 5.446 0 12.073c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://www.tiktok.com/@kojak.limousine.l?_r=1&amp;_t=ZT-99ocv0e9mBh" aria-label="TikTok" target="_blank" rel="noopener"><svg class="icon-tt" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="#F6F2EC" d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V0Z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="about.html">About Us</a>
+        <a href="fleet.html">Fleet</a>
+        <a href="services.html">Services</a>
+        <a href="testimonials.html">Reviews</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="services.html#airport">Airport Transfers</a>
+        <a href="services.html#weddings">Weddings</a>
+        <a href="services.html#cruise">Cruise Ship Pickup</a>
+        <a href="services.html#corporate">Corporate Travel</a>
+        <a href="services.html#tours">Island Tours</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Charlotte Amalie<br>St. Thomas, USVI 00802</p>
+        <a href="tel:+13407279169">(340) 727-9169</a>
+        <a href="mailto:kojaklimousine@icloud.com">kojaklimousine@icloud.com</a>
+        <a href="contact.html">Contact &amp; Map</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Kojak Limousine LLC. All rights reserved. Licensed &amp; insured USVI ground transportation carrier.</span>
+      <span><a href="faq.html">FAQ</a> · <a href="book.html">Reservations</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-book-bar">
+  <a href="tel:+13407279169" class="sticky-call" aria-label="Call Kojak Limousine"><i data-lucide="phone-call"></i></a>
+  <a href="book.html" class="btn btn-gold btn-block">Book Now</a>
+</div>
+
+<style>
+  @media (min-width: 768px) { .md-grid-3 { grid-template-columns: repeat(3,1fr) !important; } }
+</style>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

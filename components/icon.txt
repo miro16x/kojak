@@ -1,0 +1,160 @@
+You are given a task to integrate an existing React component in the codebase
+
+The codebase should support:
+- shadcn project structure  
+- Tailwind CSS
+- Typescript
+
+If it doesn't, provide instructions on how to setup project via shadcn CLI, install Tailwind or Typescript.
+
+Determine the default path for components and styles. 
+If default path for components is not /components/ui, provide instructions on why it's important to create this folder
+Copy-paste this component to /components/ui folder:
+```tsx
+icon-set.tsx
+import * as React from "react";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils"; // Your utility for classname merging
+
+// Define the shape of each item in the grid
+export interface IconGridItem {
+  id: string;
+  icon: React.ReactNode; // Use ReactNode to allow for SVG components or images
+  name: string; // Used for accessibility (aria-label)
+}
+
+// Define the props for the IconGrid component
+export interface IconGridProps {
+  items: IconGridItem[];
+  className?: string;
+}
+
+// Animation variants for the container to orchestrate children animations
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08, // Time delay between each child animating in
+    },
+  },
+};
+
+// Animation variants for each individual grid item
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 12,
+    },
+  },
+};
+
+const IconGrid = React.forwardRef<HTMLDivElement, IconGridProps>(
+  ({ items, className }, ref) => {
+    return (
+      <motion.div
+        ref={ref}
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className={cn(
+          "grid grid-cols-3 gap-4 text-center sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6",
+          className
+        )}
+      >
+        {items.map((item) => (
+          <motion.div
+            key={item.id}
+            variants={itemVariants}
+            className="group relative flex flex-col items-center justify-center"
+            aria-label={item.name}
+          >
+            <div className="flex h-24 w-24 items-center justify-center rounded-lg border bg-card p-4 transition-all duration-300 ease-in-out hover:bg-card/60 hover:shadow-md hover:-translate-y-1">
+              {item.icon}
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+    );
+  }
+);
+
+IconGrid.displayName = "IconGrid";
+
+export { IconGrid };
+
+demo.tsx
+import { IconGrid, IconGridItem } from "@/components/ui/icon-set";
+import {
+  Apple,
+  Twitter,
+  Github,
+  Figma,
+  Slack,
+  Gitlab,
+  Youtube,
+  Linkedin,
+  Dribbble,
+  Twitch,
+  Facebook,
+  Instagram,
+} from "lucide-react";
+
+// Helper to create an icon component with consistent styling
+const IconWrapper = ({ children }: { children: React.ReactNode }) => (
+  <div className="h-12 w-12 text-foreground/80 transition-transform duration-300 group-hover:scale-110 group-hover:text-foreground">
+    {children}
+  </div>
+);
+
+// Sample data for the demo
+const socialIcons: IconGridItem[] = [
+  { id: "apple", icon: <IconWrapper><Apple className="h-full w-full" /></IconWrapper>, name: "Apple" },
+  { id: "twitter", icon: <IconWrapper><Twitter className="h-full w-full" /></IconWrapper>, name: "Twitter" },
+  { id: "github", icon: <IconWrapper><Github className="h-full w-full" /></IconWrapper>, name: "GitHub" },
+  { id: "figma", icon: <IconWrapper><Figma className="h-full w-full" /></IconWrapper>, name: "Figma" },
+  { id: "slack", icon: <IconWrapper><Slack className="h-full w-full" /></IconWrapper>, name: "Slack" },
+  { id: "gitlab", icon: <IconWrapper><Gitlab className="h-full w-full" /></IconWrapper>, name: "GitLab" },
+  { id: "youtube", icon: <IconWrapper><Youtube className="h-full w-full" /></IconWrapper>, name: "YouTube" },
+  { id: "linkedin", icon: <IconWrapper><Linkedin className="h-full w-full" /></IconWrapper>, name: "LinkedIn" },
+  { id: "dribbble", icon: <IconWrapper><Dribbble className="h-full w-full" /></IconWrapper>, name: "Dribbble" },
+  { id: "twitch", icon: <IconWrapper><Twitch className="h-full w-full" /></IconWrapper>, name: "Twitch" },
+  { id: "facebook", icon: <IconWrapper><Facebook className="h-full w-full" /></IconWrapper>, name: "Facebook" },
+  { id: "instagram", icon: <IconWrapper><Instagram className="h-full w-full" /></IconWrapper>, name: "Instagram" },
+];
+
+export default function IconGridDemo() {
+  return (
+    <div className="flex w-full items-center justify-center p-8">
+      <IconGrid items={socialIcons} />
+    </div>
+  );
+}
+```
+
+Install NPM dependencies:
+```bash
+framer-motion
+```
+
+Implementation Guidelines
+ 1. Analyze the component structure and identify all required dependencies
+ 2. Review the component's argumens and state
+ 3. Identify any required context providers or hooks and install them
+ 4. Questions to Ask
+ - What data/props will be passed to this component?
+ - Are there any specific state management requirements?
+ - Are there any required assets (images, icons, etc.)?
+ - What is the expected responsive behavior?
+ - What is the best place to use this component in the app?
+
+Steps to integrate
+ 0. Copy paste all the code above in the correct directories
+ 1. Install external dependencies
+ 2. Fill image assets with Unsplash stock images you know exist
+ 3. Use lucide-react icons for svgs or logos if component requires them
