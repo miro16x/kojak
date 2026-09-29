@@ -198,6 +198,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitBtn = form.querySelector('button[type="submit"]');
     const btnLabel = submitBtn ? submitBtn.innerHTML : '';
     const errorEl = document.getElementById(errorId);
+    const success = document.getElementById(successId);
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
@@ -212,13 +214,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         if (!res.ok) throw new Error('Request failed');
         form.style.display = 'none';
-        const success = document.getElementById(successId);
         if (success) success.classList.add('show');
       } catch (err) {
         if (errorEl) errorEl.hidden = false;
         if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = btnLabel; }
       }
     });
+
+    /* "Send Another Request" — reset and show the form again */
+    const resetBtn = success ? success.querySelector('[data-reset-form]') : null;
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        form.reset();
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = btnLabel; }
+        if (errorEl) errorEl.hidden = true;
+        success.classList.remove('show');
+        form.style.display = '';
+        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
   }
 
   /* Reservation form */
