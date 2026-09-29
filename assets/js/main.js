@@ -192,29 +192,40 @@ document.addEventListener('DOMContentLoaded', () => {
     if (match) select.value = match.value || match.textContent;
   });
 
-  /* Reservation form */
-  const bookForm = document.getElementById('bookingForm');
-  if (bookForm) {
-    bookForm.addEventListener('submit', (e) => {
+  /* Submit a form as JSON to a Pages Function, toggling button/success/error state. */
+  function wireAjaxForm(form, endpoint, successId, errorId) {
+    if (!form) return;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const btnLabel = submitBtn ? submitBtn.innerHTML : '';
+    const errorEl = document.getElementById(errorId);
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      if (!bookForm.checkValidity()) { bookForm.reportValidity(); return; }
-      bookForm.style.display = 'none';
-      const success = document.getElementById('bookingSuccess');
-      if (success) success.classList.add('show');
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      if (errorEl) errorEl.hidden = true;
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = 'Sending…'; }
+      try {
+        const payload = Object.fromEntries(new FormData(form).entries());
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        if (!res.ok) throw new Error('Request failed');
+        form.style.display = 'none';
+        const success = document.getElementById(successId);
+        if (success) success.classList.add('show');
+      } catch (err) {
+        if (errorEl) errorEl.hidden = false;
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = btnLabel; }
+      }
     });
   }
 
+  /* Reservation form */
+  wireAjaxForm(document.getElementById('bookingForm'), '/api/send-quote', 'bookingSuccess', 'bookingError');
+
   /* Contact form */
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (!contactForm.checkValidity()) { contactForm.reportValidity(); return; }
-      contactForm.style.display = 'none';
-      const success = document.getElementById('contactSuccess');
-      if (success) success.classList.add('show');
-    });
-  }
+  wireAjaxForm(document.getElementById('contactForm'), '/api/send-message', 'contactSuccess', 'contactError');
 
   /* Testimonial slider (simple auto-rotate on mobile track) */
   const track = document.querySelector('.testi-track');
