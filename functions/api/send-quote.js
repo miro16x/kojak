@@ -13,6 +13,15 @@ function escapeHtml(value) {
     .replace(/>/g, '&gt;');
 }
 
+// <input type="time"> always submits 24-hour "HH:MM"; show it as "2:30 PM"
+function formatTime12h(value) {
+  const match = /^(\d{1,2}):(\d{2})/.exec(String(value));
+  if (!match) return value;
+  const hours = Number(match[1]);
+  const period = hours >= 12 ? 'PM' : 'AM';
+  return `${hours % 12 || 12}:${match[2]} ${period}`;
+}
+
 export async function onRequestPost({ request, env }) {
   let data;
   try {
@@ -37,7 +46,7 @@ export async function onRequestPost({ request, env }) {
     ['Email', data.email],
     ['Service', data.service],
     ['Date', data.date],
-    ['Time', data.time],
+    ['Time', formatTime12h(data.time)],
     ['Pickup', data.pickup],
     ['Drop-off', data.dropoff],
     ['Passengers', data.passengers],
@@ -46,7 +55,10 @@ export async function onRequestPost({ request, env }) {
   ];
 
   const text = rows.map(([label, value]) => `${label}: ${value}`).join('\n');
-  const html = `<h2>New Quote Request</h2><table>${rows
+  // gold-on-transparent logo, so it sits on a black band that matches the brand
+  // and reads the same in light- and dark-mode mail clients
+  const logoUrl = `${new URL(request.url).origin}/assets/img/logo-kojak.png`;
+  const html = `<div style="background:#0a0a0c;padding:24px;text-align:center;border-radius:8px;"><img src="${logoUrl}" alt="Kojak Limousine LLC" width="220" style="display:inline-block;width:220px;height:auto;border:0;"></div><h2>New Quote Request</h2><table>${rows
     .map(([label, value]) => `<tr><td style="padding:4px 12px 4px 0;color:#666;">${escapeHtml(label)}</td><td>${escapeHtml(value)}</td></tr>`)
     .join('')}</table>`;
 
