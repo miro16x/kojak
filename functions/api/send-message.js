@@ -29,7 +29,19 @@ export async function onRequestPost({ request, env }) {
   }
 
   const text = `From: ${data.cname} <${data.cemail}>\n\n${data.cmessage}`;
-  const html = `<p><strong>From:</strong> ${escapeHtml(data.cname)} &lt;${escapeHtml(data.cemail)}&gt;</p><p>${escapeHtml(data.cmessage).replace(/\n/g, '<br>')}</p>`;
+  const rows = [
+    ['Name', escapeHtml(data.cname)],
+    ['Email', escapeHtml(data.cemail)],
+    ['Subject', escapeHtml(data.csubject)],
+    ['Message', escapeHtml(data.cmessage).replace(/\n/g, '<br>')],
+  ];
+
+  // gold-on-transparent logo, so it sits on a black band that matches the brand
+  // and reads the same in light- and dark-mode mail clients
+  const logoUrl = `${new URL(request.url).origin}/assets/img/logo-kojak.png`;
+  const html = `<div style="background:#0a0a0c;padding:24px;text-align:center;border-radius:8px;"><img src="${logoUrl}" alt="Kojak Limousine LLC" width="220" style="display:inline-block;width:220px;height:auto;border:0;"></div><h2>New Contact Message</h2><table>${rows
+    .map(([label, value]) => `<tr><td style="padding:4px 12px 4px 0;color:#666;vertical-align:top;">${label}</td><td>${value}</td></tr>`)
+    .join('')}</table>`;
 
   const resendRes = await fetch('https://api.resend.com/emails', {
     method: 'POST',
