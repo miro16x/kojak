@@ -182,7 +182,7 @@ button { font-family: inherit; }
 .topbar-social a { color: var(--muted); transition: color .2s; }
 .topbar-social a:hover { color: var(--gold-bright); }
 .topbar-social i, .topbar-social svg { width: 15px; height: 15px; }
-.icon-fb, .icon-tt { flex-shrink: 0; display: inline-block; vertical-align: middle; }
+.icon-fb, .icon-tt, .icon-ta { flex-shrink: 0; display: inline-block; vertical-align: middle; }
 .icon-tt path { fill: var(--off-white); }
 
 /* ---------- Social icon grid (components/icon.txt pattern, adapted) ---------- */
